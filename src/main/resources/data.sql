@@ -1,5 +1,5 @@
 DELETE FROM student;
-INSERT INTO student (id, firstName,lastName, age) VALUES (1, 'Alexis','NGUYEN', 22);
-INSERT INTO student (id, firstName,lastName, age) VALUES (2, 'Alex','braquo', 21);
-INSERT INTO student (id, firstName,lastName, age) VALUES (3, 'Jonathan','leloup', 45);
-INSERT INTO student (id, firstName,lastName, age) VALUES (4, 'Rania','Dahane', 60);
+INSERT INTO student (id, name, age) VALUES (1, 'Alexis', 28);
+INSERT INTO student (id, name, age) VALUES (2, 'Clarisse', 30);
+INSERT INTO student (id, name, age) VALUES (3, 'Jonathan',80);
+INSERT INTO student (id, name, age) VALUES (4, 'Rania', 60);
