@@ -5,6 +5,7 @@ import fr.efrei.student.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -14,8 +15,19 @@ public class StudentService {
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
-
+    public Student createStudent(Student student) { return studentRepository.save(student); }
+    public Optional<Student> getStudentById(Integer id) { return studentRepository.findById(id);}
     public List<Student> findAll() {
-        return studentRepository.findAll();
+        return studentRepository.getAllStudents();
+    }
+    public Student updateStudent(Long id, Student updatedStudent) {
+        Optional<Student> existingStudent = studentRepository.findById(id);
+        if (existingStudent.isPresent()) {
+            Student student = existingStudent.get();
+            student.setName(updatedStudent.getName());
+            student.setAge(updatedStudent.getAge());
+            return studentRepository.save(student);
+        } else
+
     }
 }

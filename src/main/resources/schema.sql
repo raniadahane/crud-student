@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS student (
     id INT PRIMARY KEY,
-            name VARCHAR(100),
+    name VARCHAR(100),
 
-            age INT
+    age INT
 );
