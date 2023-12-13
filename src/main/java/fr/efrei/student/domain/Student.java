@@ -3,6 +3,7 @@ package fr.efrei.student.domain;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="student")
 public class Student {
     @Id
     private Integer id;
@@ -25,7 +26,7 @@ public class Student {
         return name;
     }
 
-    public void setName(String Name) {
+    public void setName(String name) {
         this.name = name;
     }
 
