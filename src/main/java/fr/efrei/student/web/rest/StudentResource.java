@@ -1,13 +1,9 @@
 package fr.efrei.student.web.rest;
 
-
 import fr.efrei.student.domain.Student;
 import fr.efrei.student.service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +22,7 @@ public class StudentResource {
         return studentService.getAllStudents();
     }
 
-    @PostMapping("/students")
+    @PostMapping("/student")
     public Student createStudent(@RequestBody Student student) {
         return studentService.createStudent(student);
     }
@@ -35,15 +31,14 @@ public class StudentResource {
     public Optional<Student> getStudentById(@PathVariable Integer id) {
         return studentService.getStudentById(id);
     }
-
     @PutMapping("/student/{id}")
-    public Student updateStudent(@PathVariable Long id, @RequestBody Student updatedStudent) {
-        return studentService.updateStudent(id, updatedStudent);     }
-    @DeleteMapping("/student/{id}")
-    public void deleteStudent(@PathVariable Long id) {
-        studentService.deleteStudent(id);
+    public Student updateStudent(@PathVariable Integer id, @RequestBody Student updatedStudent) {
+        return studentService.updateStudent(id, updatedStudent);
     }
 
-
+    @DeleteMapping("/student/{id}")
+    public void deleteStudent(@PathVariable Integer id) {
+        studentService.deleteStudent(id);
+    }
 
 }
