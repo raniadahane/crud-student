@@ -21,11 +21,11 @@ public class Student {
     }
 
 
-    public String getLastName() {
+    public String getName() {
         return name;
     }
 
-    public void setLastName(String lastName) {
+    public void setName(String Name) {
         this.name = name;
     }
 
